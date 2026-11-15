@@ -1,5 +1,7 @@
 package dev.wj.client.module;
 
+import net.minecraft.client.Minecraft;
+
 import java.util.Objects;
 
 public abstract class Module {
@@ -44,7 +46,7 @@ public abstract class Module {
         setEnabled(!enabled);
     }
 
-    public void onTick() {
+    public void onTick(Minecraft client) {
     }
 
     protected void onEnable() {

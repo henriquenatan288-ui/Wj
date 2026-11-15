@@ -1,5 +1,9 @@
 package dev.wj.client.module;
 
+import dev.wj.client.module.impl.AutoJumpModule;
+import dev.wj.client.module.impl.SprintModule;
+import net.minecraft.client.Minecraft;
+
 import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedHashMap;
@@ -17,6 +21,9 @@ public final class ModuleManager {
         if (initialized) {
             return;
         }
+
+        register(new SprintModule());
+        register(new AutoJumpModule());
         initialized = true;
     }
 
@@ -39,10 +46,10 @@ public final class ModuleManager {
         return Collections.unmodifiableCollection(MODULES.values());
     }
 
-    public static void tick() {
+    public static void tick(Minecraft client) {
         for (Module module : MODULES.values()) {
             if (module.isEnabled()) {
-                module.onTick();
+                module.onTick(client);
             }
         }
     }
