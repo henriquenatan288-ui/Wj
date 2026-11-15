@@ -11,12 +11,14 @@ public final class AutoJumpModule extends Module {
 
     @Override
     public void onTick(Minecraft client) {
-        if (client.player == null) {
-            return;
-        }
+        boolean shouldJump = client.player != null
+                && client.options.keyUp.isDown()
+                && client.player.onGround();
+        client.options.keyJump.setDown(shouldJump);
+    }
 
-        if (client.options.keyUp.isDown() && client.player.onGround()) {
-            client.player.jump();
-        }
+    @Override
+    protected void onDisable() {
+        Minecraft.getInstance().options.keyJump.setDown(false);
     }
 }

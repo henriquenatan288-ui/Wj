@@ -1,6 +1,5 @@
 package dev.wj.client;
 
-import com.mojang.blaze3d.platform.InputConstants;
 import dev.wj.client.gui.WJClickGui;
 import dev.wj.client.module.ModuleManager;
 import net.fabricmc.api.ClientModInitializer;
@@ -19,10 +18,10 @@ public final class WJClient implements ClientModInitializer {
         KeyMapping.Category category = KeyMapping.Category.register(
                 Identifier.fromNamespaceAndPath(WJ.MOD_ID, "main")
         );
+        // GLFW key code 344 is Right Shift.
         openClickGui = KeyMappingHelper.registerKeyMapping(new KeyMapping(
                 "key.wj.open_clickgui",
-                InputConstants.Type.KEYSYM,
-                InputConstants.KEY_RIGHT_SHIFT,
+                344,
                 category
         ));
 
