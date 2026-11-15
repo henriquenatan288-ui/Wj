@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "wj",
+  "version": "${version}",
+  "name": "WJ Client",
+  "description": "An original modular client-side foundation for Minecraft.",
+  "authors": ["WJ Team"],
+  "environment": "client",
+  "entrypoints": {
+    "main": [
+      "dev.wj.client.WJ"
+    ],
+    "client": [
+      "dev.wj.client.WJClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.20.1",
+    "minecraft": "~26.2",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}
