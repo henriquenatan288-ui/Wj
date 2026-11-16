@@ -1,6 +1,7 @@
 {
   "pack": {
-    "pack_format": 88,
-    "description": "WJ Galaxy Tools - animated nebula for Netherite tools"
+    "description": "WJ Galaxy Tools - animated nebula for Netherite tools",
+    "min_format": [88, 0],
+    "max_format": [88, 0]
   }
 }
