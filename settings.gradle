@@ -6,4 +6,4 @@ pluginManagement {
     }
 }
 
-rootProject.name = "wj-client"
+rootProject.name = "wj-galaxy-tools"

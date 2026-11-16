@@ -1,17 +1,14 @@
 {
   "schemaVersion": 1,
-  "id": "wj",
+  "id": "wjgalaxytools",
   "version": "${version}",
-  "name": "WJ Client",
-  "description": "An original modular client-side foundation for Minecraft.",
-  "authors": ["WJ Team"],
+  "name": "WJ Galaxy Tools",
+  "description": "Animated procedural galaxy shader for Netherite tools.",
+  "authors": ["WJ"],
   "environment": "client",
   "entrypoints": {
     "main": [
-      "dev.wj.client.WJ"
-    ],
-    "client": [
-      "dev.wj.client.WJClient"
+      "dev.wj.galaxytools.GalaxyToolsMod"
     ]
   },
   "depends": {

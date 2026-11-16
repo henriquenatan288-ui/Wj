@@ -1,6 +1,5 @@
 plugins {
     id "net.fabricmc.fabric-loom" version "${loom_version}"
-    id "maven-publish"
 }
 
 version = project.mod_version
@@ -11,16 +10,13 @@ base {
 }
 
 repositories {
-    // Loom provides the Minecraft and Fabric repositories required by this project.
+    mavenCentral()
 }
 
 loom {
-    splitEnvironmentSourceSets()
-
     mods {
-        "wj" {
+        "wjgalaxytools" {
             sourceSet sourceSets.main
-            sourceSet sourceSets.client
         }
     }
 }
@@ -31,13 +27,11 @@ dependencies {
     implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 }
 
-def modVersion = project.version
-
 processResources {
-    inputs.property "version", modVersion
+    inputs.property "version", project.version
 
     filesMatching("fabric.mod.json") {
-        expand "version": modVersion
+        expand "version": project.version
     }
 }
 
