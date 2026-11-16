@@ -114,9 +114,10 @@ void main() {
     // The four replacement tool textures share this exact cyan marker.
     // All other item textures stay on the vanilla rendering path.
     bool galaxyTool = color.a > 0.001
-            && color.r < 0.015
-            && color.g > 0.88
-            && color.b > 0.94;
+            && color.r < 0.01
+            && color.g > 0.90
+            && color.g < 0.98
+            && color.b > 0.985;
 
     if (galaxyTool) {
         vec2 atlasPixel = texCoord0 * vec2(textureSize(Sampler0, 0));
